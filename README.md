@@ -1,1 +1,1 @@
-# smabro_app
+# SmaApp
