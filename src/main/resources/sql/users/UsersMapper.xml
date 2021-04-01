@@ -17,8 +17,8 @@
     values (#{name}, #{password}, 0, 1500, #{mainCharacterId}, #{sub1CharacterId}, #{sub2CharacterId})
   </insert>
 
-  <select id="findByName" parameterType="string" resultType="com.example.smabro_app.infrastructure.model.response.UserResponseQuery">
-    select name, rate, main_character_id, sub1_character_id, sub2_character_id
+  <select id="findByName" parameterType="string" resultType="com.example.smabro_app.security.UserAccount">
+    select name, password
     from smabro_app_db.Users
     where name = #{name}
   </select>

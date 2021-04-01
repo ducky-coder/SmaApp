@@ -18,11 +18,6 @@ public class UserService {
         return userRepository.createUser(request);
     }
 
-    public User findByUserName(@Nonnull final String name) {
-
-        return userRepository.findByUserName(name);
-    }
-
     public int updateUser(@Nonnull final User request) {
 
         return userRepository.updateUser(request);

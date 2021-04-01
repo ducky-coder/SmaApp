@@ -19,11 +19,6 @@ public class UserRepository {
         return userMapper.insert(UserRequestQuery.from(request));
     }
 
-    public User findByUserName(@Nonnull final String name) {
-
-        return User.from(userMapper.findByName(name));
-    }
-
     public User findByUserId(final int id) {
 
         return User.from(userMapper.findById(id));
