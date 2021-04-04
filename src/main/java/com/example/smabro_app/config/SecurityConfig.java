@@ -38,11 +38,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
-        //これはハッシュ化済みの値をDBに登録する確認用に出力させるコード//
+        // ハッシュ化済みの値をDBに登録する確認
         String password = "testPassword";
         String digest = bCryptPasswordEncoder.encode(password);
         System.out.println("ハッシュ値 = " + digest);
-        ///////////////////////////////////////////////////////////////
 
         return new BCryptPasswordEncoder();
     }
