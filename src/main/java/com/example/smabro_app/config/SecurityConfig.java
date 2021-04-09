@@ -55,7 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http
                 .formLogin()
-                .successHandler(new AuthSuccessHandler());
+                .successHandler(new AuthSuccessHandler())
+                .and()
+                .sessionManagement()
+                .maximumSessions(1);
 
         http
                 .logout() // ログアウトに関する設定

@@ -30,6 +30,9 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     // javax.annotation @Nonnull使えるように
     compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    // セッションストアをredisへ変更するため
+    compile 'org.springframework.boot:spring-boot-starter-data-redis'
+    compile 'org.springframework.session:spring-session-data-redis'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
