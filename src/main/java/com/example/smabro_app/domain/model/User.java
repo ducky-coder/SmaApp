@@ -5,6 +5,8 @@ import com.example.smabro_app.presentation.dto.request.UserRequest;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.annotation.Nonnull;
 

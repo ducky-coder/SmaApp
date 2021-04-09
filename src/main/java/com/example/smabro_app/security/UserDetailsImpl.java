@@ -1,8 +1,6 @@
 package com.example.smabro_app.security;
 
-import com.example.smabro_app.infrastructure.model.response.UserResponseQuery;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -7,23 +7,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.WebAttributes;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
-import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
-import org.springframework.util.StringUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -36,56 +26,44 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
 
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-
-        // ハッシュ化済みの値をDBに登録する確認
-        String password = "testPassword";
-        String digest = bCryptPasswordEncoder.encode(password);
-        System.out.println("ハッシュ値 = " + digest);
-
         return new BCryptPasswordEncoder();
     }
 
     /**
-     * 認可設定を無視するリクエストを設定
-     * 静的リソース(image,javascript,css)を認可処理の対象から除外する
+     *　静的リソースに対してセキュリティを無効に設定
+     * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.web.builders.WebSecurity)
      */
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers("/resources/**");
+                .antMatchers( "/css/**"
+                        , "/img/**"
+                        , "/js/**"
+                        , "/fonts/**");
     }
 
     /**
-     * 認証・認可の情報を設定する
-     * SpringSecurityのconfigureメソッドをオーバーライドしています。
+     * csrf, 認証認可, ログアウトについての設定
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http
-                .authorizeRequests()
-                .antMatchers("/login").permitAll()
+                .csrf().disable().authorizeRequests()
+                .antMatchers("/login", "/v1/users/").permitAll()
                 .anyRequest().authenticated();
+
         http
                 .formLogin()
                 .successHandler(new AuthSuccessHandler());
+
+        http
+                .logout() // ログアウトに関する設定
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout**")) // ログアウトさせる際に遷移させるパス
+                .logoutSuccessUrl("/login") // ログアウト後に遷移させるパス(ここではログイン画面を設定)
+                .deleteCookies("JSESSIONID") // ログアウト後、Cookieに保存されているセッションIDを削除
+                .invalidateHttpSession(true); // true:ログアウト後、セッションを無効にする false:セッションを無効にしない
     }
-
-
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/", "/home").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .successHandler(new SavedRequestAwareAuthenticationSuccessHandler())
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll();
-//    }
 
     @Autowired
     void configureAuthenticationManager(AuthenticationManagerBuilder auth) throws Exception{
