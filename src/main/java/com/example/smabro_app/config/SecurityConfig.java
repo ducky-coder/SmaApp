@@ -68,7 +68,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
         http
                 .formLogin()
-                .defaultSuccessUrl("/sample", true);
+                .successHandler(new AuthSuccessHandler());
     }
 
 

@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS Characters;
 CREATE TABLE IF NOT EXISTS Users(
     id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
+    password VARCHAR(250) NOT NULL,
     admin Boolean NOT NULL,
     rate INT NOT NULL,
     matching_status int NOT NULL,
