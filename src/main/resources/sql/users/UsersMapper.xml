@@ -34,4 +34,10 @@
     name = #{name}, password = #{password}, main_character_id = #{mainCharacterId}, sub1_character_id = #{sub1CharacterId}, sub2_character_id = #{sub2CharacterId}
     where id = #{id}
   </update>
+
+  <update id="updateUserMatchingStatus" parameterType="integer">
+    update smabro_app_db.Users set
+    matching_status = #{status}
+    where id = #{id}
+  </update>
 </mapper>

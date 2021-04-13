@@ -22,4 +22,9 @@ public class UserService {
 
         return userRepository.updateUser(request);
     }
+
+    public int updateUserMatchingStatus(Integer status, int id) {
+
+        return userRepository.updateUserMatchingStatus(status, id);
+    }
 }

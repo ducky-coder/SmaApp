@@ -14,4 +14,5 @@ public interface UsersMapper {
     UserAccount findByName(@Nonnull final String name);
     UserResponseQuery findById(final int id);
     int update(@Nonnull final UserRequestQuery record);
+    int updateUserMatchingStatus(Integer status, int id);
 }

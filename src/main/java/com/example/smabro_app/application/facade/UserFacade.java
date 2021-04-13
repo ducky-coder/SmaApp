@@ -27,4 +27,9 @@ public class UserFacade {
 
         return userService.updateUser(User.createUpdateUserRequest(request, id));
     }
+
+    public int updateUserMatchingStatus(Integer status, int id) {
+
+        return userService.updateUserMatchingStatus(status, id);
+    }
 }

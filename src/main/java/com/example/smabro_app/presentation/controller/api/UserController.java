@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -27,5 +28,11 @@ public class UserController {
     public int updateUser(@RequestBody final UserRequest request, @PathVariable("id") final int id) {
 
         return userFacade.updateUser(request, id);
+    }
+
+    @PutMapping("/{id}")
+    public int updateUserMatchingStatus(@RequestParam("condition") final Integer status, @PathVariable("id") final int id) {
+
+        return userFacade.updateUserMatchingStatus(status, id);
     }
 }

@@ -28,4 +28,9 @@ public class UserRepository {
 
         return userMapper.update(UserRequestQuery.createUpdateUserRequest(request));
     }
+
+    public int updateUserMatchingStatus(Integer status, int id) {
+
+        return userMapper.updateUserMatchingStatus(status, id);
+    }
 }
