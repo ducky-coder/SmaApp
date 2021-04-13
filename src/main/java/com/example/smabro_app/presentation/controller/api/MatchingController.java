@@ -27,5 +27,5 @@ public class MatchingController {
         return matchingFacade.getOpponent(condition, userId);
     }
 
-    @PutMapping
+    @PutMapping("/{matching}")
 }

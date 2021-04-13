@@ -1,6 +1,7 @@
 package com.example.smabro_app.application.service;
 
 import com.example.smabro_app.domain.model.OpponentList;
+import com.example.smabro_app.domain.model.enumeration.MatchingStatus;
 import com.example.smabro_app.infrastructure.repository.MatchingRepository;
 import com.example.smabro_app.infrastructure.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +19,8 @@ public class MatchingService {
     private final UserRepository userRepository;
 
     public OpponentList.Opponent getOpponent(final int condition, final int userId) {
+
+        userRepository.updateUserMatchingStatus(MatchingStatus.MATCHING.getCode(), userId);
 
         int myRate = userRepository.findByUserId(userId).getRate();
         List<OpponentList.Opponent> filteredOpponentList = matchingRepository.getOpponent(myRate, userId).filterOpponentListFromCondition(condition);
