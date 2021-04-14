@@ -12,11 +12,14 @@
 * CSS
 * Vue.js
 * Vuex
-* VUeRouter
+* VueRouter
 
 ### DB
 * MySql
 * MyBatis
+
+### Session Store
+* Redis（現在未設定）
 
 ### Test
 * JUnit（現場ではSpockを使っているので、経験の為）
