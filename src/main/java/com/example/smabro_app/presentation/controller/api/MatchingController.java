@@ -6,6 +6,7 @@ import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,5 +28,11 @@ public class MatchingController {
         return matchingFacade.getOpponent(condition, userId);
     }
 
-    @PutMapping("/{matching}")
+    @PostMapping("/{matchId}/{userId}")
+    public void postStatusCode(@PathVariable("matchId") final int matchId, @PathVariable("userId") final int userId) {
+
+        // TODO URIにユーザーIDは含めずにセッションからユーザーIDを取得するようにする
+
+        matchingFacade.postStatusCode(matchId, userId);
+    }
 }

@@ -9,4 +9,6 @@ import java.util.List;
 public interface MatchingMapper {
 
     List<OpponentResponse> getOpponent(final int id);
+
+    void postStatusCode(int matchId, int userId);
 }

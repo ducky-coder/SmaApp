@@ -15,4 +15,9 @@ public class MatchingRepository {
 
         return OpponentList.from(matchingMapper.getOpponent(userId), myRate);
     }
+
+    public void postStatusCode(int matchId, int userId) {
+
+        matchingMapper.postStatusCode(matchId, userId);
+    }
 }

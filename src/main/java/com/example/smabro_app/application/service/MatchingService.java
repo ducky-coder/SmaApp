@@ -27,4 +27,9 @@ public class MatchingService {
 
         return filteredOpponentList.get(new Random().nextInt(filteredOpponentList.size()));
     }
+
+    public void postStatusCode(final int matchId, final int userId) {
+
+        matchingRepository.postStatusCode(matchId, userId);
+    }
 }
