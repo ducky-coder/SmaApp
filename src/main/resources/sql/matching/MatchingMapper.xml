@@ -9,9 +9,9 @@
         and id != #{id}
     </select>
 
-    <select id="postStatusCode" parameterType="integer">
-       insert into smabro_app_db.Matches (status_code)
-       values #{}
-    </select>
+<!--    <select id="postStatusCode" parameterType="integer">-->
+<!--       insert into smabro_app_db.Matches status_code-->
+<!--       values #{}-->
+<!--    </select>-->
 
 </mapper>

@@ -30,9 +30,9 @@ public class UserController {
         return userFacade.updateUser(request, id);
     }
 
-    @PutMapping("/{id}")
-    public int updateUserMatchingStatus(@RequestParam("condition") final Integer status, @PathVariable("id") final int id) {
-
-        return userFacade.updateUserMatchingStatus(status, id);
-    }
+//    @PutMapping("/{id}")
+//    public int updateUserMatchingStatus(@RequestParam("condition") final Integer status, @PathVariable("id") final int id) {
+//
+//        return userFacade.updateUserMatchingStatus(status, id);
+//    }
 }
