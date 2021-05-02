@@ -9,7 +9,17 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserAccount {
 
+    private String id;
+
     private String name;
 
     private String password;
+
+    private int rate;
+
+    private int mainCharacterId;
+
+    private int sub1CharacterId;
+
+    private int sub2CharacterId;
 }

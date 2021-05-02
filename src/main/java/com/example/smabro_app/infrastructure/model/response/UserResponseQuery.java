@@ -9,8 +9,6 @@ public class UserResponseQuery {
 
     private int rate;
 
-    private CharSequence password;
-
     private int mainCharacterId;
 
     private int sub1CharacterId;

@@ -2,6 +2,7 @@ package com.example.smabro_app.domain.model;
 
 import com.example.smabro_app.infrastructure.model.response.UserResponseQuery;
 import com.example.smabro_app.presentation.dto.request.UserRequest;
+import com.example.smabro_app.security.UserAccount;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Data;
@@ -72,6 +73,17 @@ public class User {
                 .mainCharacterId(responseQuery.getMainCharacterId())
                 .sub1CharacterId(responseQuery.getSub1CharacterId())
                 .sub2CharacterId(responseQuery.getSub2CharacterId())
+                .build();
+    }
+
+    public static User from(@Nonnull final UserAccount userAccount) {
+
+        return User.builder()
+                .name(userAccount.getName())
+                .rate(userAccount.getRate())
+                .mainCharacterId(userAccount.getMainCharacterId())
+                .sub1CharacterId(userAccount.getSub1CharacterId())
+                .sub2CharacterId(userAccount.getSub2CharacterId())
                 .build();
     }
 

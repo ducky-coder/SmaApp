@@ -23,6 +23,11 @@ public class UserService {
         return userRepository.updateUser(request);
     }
 
+    public User findByName(@Nonnull final String name) {
+
+        return userRepository.findByUserName(name);
+    }
+
     public int updateUserMatchingStatus(Integer status, int id) {
 
         return userRepository.updateUserMatchingStatus(status, id);

@@ -24,6 +24,11 @@ public class UserRepository {
         return User.from(userMapper.findById(id));
     }
 
+    public User findByUserName(final String name) {
+
+        return User.from(userMapper.findByName(name));
+    }
+
     public int updateUser(@Nonnull final User request) {
 
         return userMapper.update(UserRequestQuery.createUpdateUserRequest(request));
