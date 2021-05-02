@@ -40,4 +40,10 @@
     matching_status = #{status}
     where id = #{id}
   </update>
+
+  <select id="getRateRanking" resultType="com.example.smabro_app.presentation.dto.response.UserResponse">
+    select name, rate, main_character_id, sub1_character_id, sub2_character_id
+    from smabro_app_db.Users
+    order by rate desc
+  </select>
 </mapper>

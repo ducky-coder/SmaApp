@@ -10,8 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/users")
@@ -36,6 +37,12 @@ public class UserController {
     public UserResponse findByName(@PathVariable String name) {
 
         return userFacade.findByName(name);
+    }
+
+    @GetMapping("/ranking")
+    public List<UserResponse> getRateRanking() {
+
+        return userFacade.getRateRanking();
     }
 
     // TODO 以下の実装はupdateUserと統合する

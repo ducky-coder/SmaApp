@@ -9,6 +9,8 @@ import lombok.Data;
 @Builder(access = AccessLevel.PRIVATE)
 public class OpponentResponse {
 
+    private Integer id;
+
     private String name;
 
     private int rate;

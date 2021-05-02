@@ -3,10 +3,12 @@ package com.example.smabro_app.infrastructure.repository;
 import com.example.smabro_app.domain.model.User;
 import com.example.smabro_app.infrastructure.mapper.UsersMapper;
 import com.example.smabro_app.infrastructure.model.request.UserRequestQuery;
+import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
@@ -37,5 +39,10 @@ public class UserRepository {
     public int updateUserMatchingStatus(Integer status, int id) {
 
         return userMapper.updateUserMatchingStatus(status, id);
+    }
+
+    public List<UserResponse> getRateRanking() {
+
+        return userMapper.getRateRanking();
     }
 }

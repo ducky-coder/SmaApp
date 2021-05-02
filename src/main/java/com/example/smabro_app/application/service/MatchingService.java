@@ -4,6 +4,7 @@ import com.example.smabro_app.domain.model.OpponentList;
 import com.example.smabro_app.domain.model.enumeration.MatchingStatus;
 import com.example.smabro_app.infrastructure.repository.MatchingRepository;
 import com.example.smabro_app.infrastructure.repository.UserRepository;
+import com.example.smabro_app.presentation.dto.request.MatchingRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +29,8 @@ public class MatchingService {
         return filteredOpponentList.get(new Random().nextInt(filteredOpponentList.size()));
     }
 
-    public void postStatusCode(final int matchId, final int userId) {
+    public void createMatching(final MatchingRequest matchingRequest) {
 
-        matchingRepository.postStatusCode(matchId, userId);
+        matchingRepository.createMatching(matchingRequest);
     }
 }

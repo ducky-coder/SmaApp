@@ -2,6 +2,7 @@ package com.example.smabro_app.infrastructure.repository;
 
 import com.example.smabro_app.domain.model.OpponentList;
 import com.example.smabro_app.infrastructure.mapper.MatchingMapper;
+import com.example.smabro_app.presentation.dto.request.MatchingRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -16,8 +17,8 @@ public class MatchingRepository {
         return OpponentList.from(matchingMapper.getOpponent(userId), myRate);
     }
 
-    public void postStatusCode(int matchId, int userId) {
+    public void createMatching(MatchingRequest matchingRequest) {
 
-        matchingMapper.postStatusCode(matchId, userId);
+        matchingMapper.createMatching(matchingRequest);
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -37,5 +38,10 @@ public class UserFacade {
     public int updateUserMatchingStatus(Integer status, int id) {
 
         return userService.updateUserMatchingStatus(status, id);
+    }
+
+    public List<UserResponse> getRateRanking() {
+
+        return userService.getRateRanking();
     }
 }

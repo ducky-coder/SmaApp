@@ -11,6 +11,8 @@ import java.util.List;
 @Data
 public class OpponentResponse {
 
+    private Integer id;
+
     private String name;
 
     private int rate;

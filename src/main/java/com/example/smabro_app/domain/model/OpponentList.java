@@ -53,6 +53,8 @@ public class OpponentList {
     @Builder(access = AccessLevel.PRIVATE)
     public static class Opponent {
 
+        private final Integer id;
+
         private final String name;
 
         private final int rate;
@@ -66,6 +68,7 @@ public class OpponentList {
         public static Opponent from(@Nonnull final OpponentResponse opponentResponse) {
 
             return Opponent.builder()
+                    .id(opponentResponse.getId())
                     .name(opponentResponse.getName())
                     .rate(opponentResponse.getRate())
                     .mainCharacterId(opponentResponse.getMainCharacterId())
