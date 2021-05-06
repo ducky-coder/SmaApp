@@ -14,6 +14,6 @@ public class Graph {
         System.out.println(userDetails.getUsername());
         System.out.println(userDetails.getPassword());
 
-        return "hello";
+        return "ログインしました";
     }
 }
