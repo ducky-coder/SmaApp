@@ -44,10 +44,25 @@ INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub
 VALUES ("testUser3", "testPassword", 1, 1700, 3, 2, 1);
 
 INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
-VALUES ("testUser4", "testPassword", 2, 1800, 3, 2, 1);
+VALUES ("testUser4", "testPassword", 2, 1800, 2, 2, 1);
 
 INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
-VALUES ("testUser5", "testPassword", 1, 1650, 3, 2, 1);
+VALUES ("testUser5", "testPassword", 1, 1650, 2, 2, 1);
 
 INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
-VALUES ("testUser6", "testPassword", 1, 1550, 3, 2, 1);
+VALUES ("testUser6", "testPassword", 1, 1550, 2, 2, 1);
+
+INSERT INTO Users (name, password, matching_status, rate, main_character_id, sub1_character_id, sub2_character_id)
+VALUES ("testUser7", "testPassword", 1, 1950, 4, 2, 1);
+
+INSERT INTO Characters (character_name)
+VALUES ("マリオ");
+
+INSERT INTO Characters (character_name)
+VALUES ("ヨッシー");
+
+INSERT INTO Characters (character_name)
+VALUES ("ジョーカー");
+
+INSERT INTO Characters (character_name)
+VALUES ("ピカチュウ");
