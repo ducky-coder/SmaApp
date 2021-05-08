@@ -1,5 +1,6 @@
 package com.example.smabro_app.infrastructure.repository;
 
+import com.example.smabro_app.domain.model.HistoryInfoList;
 import com.example.smabro_app.domain.model.OpponentList;
 import com.example.smabro_app.infrastructure.mapper.MatchingMapper;
 import com.example.smabro_app.presentation.dto.request.MatchingRequest;
@@ -20,5 +21,10 @@ public class MatchingRepository {
     public void createMatching(MatchingRequest matchingRequest) {
 
         matchingMapper.createMatching(matchingRequest);
+    }
+
+    public HistoryInfoList getHistory(Integer userId) {
+
+        return HistoryInfoList.from(matchingMapper.getHistory(userId));
     }
 }

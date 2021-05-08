@@ -17,7 +17,9 @@ CREATE TABLE IF NOT EXISTS Users(
 CREATE TABLE IF NOT EXISTS Matches(
     id INT AUTO_INCREMENT NOT NULL,
     user_id int NOT NULL,
+    user_rate int NOT NULL,
     opponent_id int NOT NULL,
+    opponent_rate int NOT NULL,
     status_code int NOT NULL,
     used_character1_id int NOT NULL,
     used_character2_id int,
@@ -66,3 +68,21 @@ VALUES ("ジョーカー");
 
 INSERT INTO Characters (character_name)
 VALUES ("ピカチュウ");
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (1, 1500, 2, 1600, 1, 1, 1, 1, 3, 1, 1);
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (1, 1515, 3, 1560, 1, 2, 1, 1, 1, 1, 1);
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (2, 1600, 1, 1500, 2, 3, 1, 1, 1, 1, 1);
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (2, 1650, 4, 1700, 2, 2, 1, 1, 4, 1, 1);
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (3, 1560, 1, 1515, 2, 1, 1, 1, 2, 1, 1);
+
+INSERT INTO Matches (user_id, user_rate, opponent_id, opponent_rate, status_code, used_character1_id, used_character2_id, used_character3_id, opponent_character1_id, opponent_character2_id, opponent_character3_id)
+VALUES (4, 1700, 2, 1650, 1, 4, 1, 1, 2, 1, 1);

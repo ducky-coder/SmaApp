@@ -2,6 +2,7 @@ package com.example.smabro_app.presentation.controller.api;
 
 import com.example.smabro_app.application.facade.MatchingFacade;
 import com.example.smabro_app.presentation.dto.request.MatchingRequest;
+import com.example.smabro_app.presentation.dto.response.HistoryResponseList;
 import com.example.smabro_app.presentation.dto.response.OpponentResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/Matching")
+@RequestMapping("/v1/matches")
 @RequiredArgsConstructor
 public class MatchingController {
 
@@ -26,6 +27,15 @@ public class MatchingController {
             ) {
 
         return matchingFacade.getOpponent(condition, userId);
+    }
+
+    // TODO 勝ち試合負け試合のみ取得,最新○件だけ取得するようにする？
+    @GetMapping("/history/{userId}")
+    public HistoryResponseList getHistory(
+            @PathVariable("userId") final int userId
+    ) {
+
+        return matchingFacade.getHistory(userId);
     }
 
     @PostMapping("/")

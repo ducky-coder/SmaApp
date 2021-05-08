@@ -2,6 +2,7 @@ package com.example.smabro_app.application.facade;
 
 import com.example.smabro_app.application.service.MatchingService;
 import com.example.smabro_app.presentation.dto.request.MatchingRequest;
+import com.example.smabro_app.presentation.dto.response.HistoryResponseList;
 import com.example.smabro_app.presentation.dto.response.OpponentResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,10 @@ public class MatchingFacade {
     public void createMatching(@Nonnull MatchingRequest matchingRequest) {
 
         matchingService.createMatching(matchingRequest);
+    }
+
+    public HistoryResponseList getHistory(int userId) {
+
+        return HistoryResponseList.from(matchingService.getHistory(userId));
     }
 }
