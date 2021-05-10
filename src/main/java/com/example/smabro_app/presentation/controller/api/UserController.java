@@ -2,6 +2,7 @@ package com.example.smabro_app.presentation.controller.api;
 
 import com.example.smabro_app.application.facade.UserFacade;
 import com.example.smabro_app.presentation.dto.request.UserRequest;
+import com.example.smabro_app.presentation.dto.response.UserRateResponseList;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +44,12 @@ public class UserController {
     public List<UserResponse> getRateRanking() {
 
         return userFacade.getRateRanking();
+    }
+
+    @GetMapping("/{userId}/rate")
+    public UserRateResponseList getRateList(@PathVariable("userId") final int userId) {
+
+        return userFacade.getRateList(userId);
     }
 
     // TODO 以下の実装はupdateUserと統合する

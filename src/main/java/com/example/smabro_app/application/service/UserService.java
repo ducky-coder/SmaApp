@@ -1,6 +1,7 @@
 package com.example.smabro_app.application.service;
 
 import com.example.smabro_app.domain.model.User;
+import com.example.smabro_app.domain.model.UserRateList;
 import com.example.smabro_app.infrastructure.repository.UserRepository;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
@@ -38,5 +39,10 @@ public class UserService {
     public List<UserResponse> getRateRanking() {
 
         return userRepository.getRateRanking();
+    }
+
+    public UserRateList getRateList(int userId) {
+
+        return userRepository.getRateList(userId);
     }
 }

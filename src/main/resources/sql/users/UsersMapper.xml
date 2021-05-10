@@ -46,4 +46,10 @@
     from smabro_app_db.Users
     order by rate desc
   </select>
+
+  <select id="getRateList" parameterType="integer" resultType="java.lang.Integer">
+    select user_rate
+    from smabro_app_db.Matches
+    where user_id = #{userId}
+  </select>
 </mapper>

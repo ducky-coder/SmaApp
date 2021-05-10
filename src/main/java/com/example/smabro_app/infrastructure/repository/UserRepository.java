@@ -1,6 +1,7 @@
 package com.example.smabro_app.infrastructure.repository;
 
 import com.example.smabro_app.domain.model.User;
+import com.example.smabro_app.domain.model.UserRateList;
 import com.example.smabro_app.infrastructure.mapper.UsersMapper;
 import com.example.smabro_app.infrastructure.model.request.UserRequestQuery;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
@@ -44,5 +45,10 @@ public class UserRepository {
     public List<UserResponse> getRateRanking() {
 
         return userMapper.getRateRanking();
+    }
+
+    public UserRateList getRateList(int userId) {
+
+        return UserRateList.from(userMapper.getRateList(userId));
     }
 }

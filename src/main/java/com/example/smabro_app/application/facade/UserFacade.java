@@ -3,6 +3,7 @@ package com.example.smabro_app.application.facade;
 import com.example.smabro_app.application.service.UserService;
 import com.example.smabro_app.domain.model.User;
 import com.example.smabro_app.presentation.dto.request.UserRequest;
+import com.example.smabro_app.presentation.dto.response.UserRateResponseList;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -43,5 +44,10 @@ public class UserFacade {
     public List<UserResponse> getRateRanking() {
 
         return userService.getRateRanking();
+    }
+
+    public UserRateResponseList getRateList(int userId) {
+
+        return UserRateResponseList.from(userService.getRateList(userId));
     }
 }

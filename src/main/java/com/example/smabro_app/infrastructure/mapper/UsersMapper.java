@@ -1,6 +1,7 @@
 package com.example.smabro_app.infrastructure.mapper;
 
 import com.example.smabro_app.infrastructure.model.request.UserRequestQuery;
+import com.example.smabro_app.infrastructure.model.response.UserRateResponseList;
 import com.example.smabro_app.infrastructure.model.response.UserResponseQuery;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
 import com.example.smabro_app.security.UserAccount;
@@ -23,4 +24,6 @@ public interface UsersMapper {
     int updateUserMatchingStatus(Integer status, int id);
 
     List<UserResponse> getRateRanking();
+
+    List<Integer> getRateList(int userId);
 }
