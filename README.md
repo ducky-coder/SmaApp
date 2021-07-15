@@ -23,3 +23,7 @@
 
 ### Test
 * groovy
+
+### CI/CD
+* GithubActions
+* AWS
