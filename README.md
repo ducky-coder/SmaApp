@@ -22,4 +22,8 @@
 * Redis（現在未設定）
 
 ### Test
-* JUnit（現場ではSpockを使っているので、経験の為）
+* groovy
+
+### CI/CD
+* GithubActions
+* AWS
