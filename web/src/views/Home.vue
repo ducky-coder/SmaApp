@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>{{ bpi }}</h1>>
+    <h1>{{ bpi }}</h1>>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
+import axios from 'axios'
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+//API格納用のプロパティ
+  data: function(){
+    return{
+      data:{
+        bpi: "hello"
+      }
+    }
+  },
+  mounted: function(){
+    axios.get('http://localhost:8080/v1/matches/1/?condition=300')
+        .then(response => this.bpi = response.data)
+        .catch(err => console.log(err))
   }
-};
+}
 </script>

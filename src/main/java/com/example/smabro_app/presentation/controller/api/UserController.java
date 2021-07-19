@@ -5,6 +5,7 @@ import com.example.smabro_app.presentation.dto.request.UserRequest;
 import com.example.smabro_app.presentation.dto.response.UserRateResponseList;
 import com.example.smabro_app.presentation.dto.response.UserResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/v1/users")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:8081")
 public class UserController {
 
     private final UserFacade userFacade;
@@ -58,4 +60,9 @@ public class UserController {
 //
 //        return userFacade.updateUserMatchingStatus(status, id);
 //    }
+
+    public String hello() {
+
+        return "hello";
+    }
 }

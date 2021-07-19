@@ -1,32 +1,28 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div class="home">
+    <h1>hello</h1>
+    <h1>{{ bpi.data }}</h1>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+import axios from 'axios'
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+//API格納用のプロパティ
+  data: function(){
+    return{
+      data:{
+        bpi: 'hello'
+      }
     }
+  },
+  mounted: function(){
+    axios.get('http://localhost:8080/v1/matches/1/?condition=300')
+        .then(res => this.bpi = res.data)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
   }
 }
-</style>
+</script>
