@@ -8,7 +8,7 @@ import spock.lang.Specification
 @SpringBootTest
 class UserControllerSpec extends Specification {
 
-    def "checkメソッドテスト"() {
+    def "helloメソッドテスト"() {
         when:
         def userFacade = Mock(UserFacade)
         def userController = new UserController(userFacade)
@@ -16,5 +16,15 @@ class UserControllerSpec extends Specification {
 
         then:
         actual == "hello"
+    }
+
+    def "worldメソッドテスト"() {
+        when:
+        def userFacade = Mock(UserFacade)
+        def userController = new UserController(userFacade)
+        def actual = userController.world()
+
+        then:
+        actual == "worlds"
     }
 }

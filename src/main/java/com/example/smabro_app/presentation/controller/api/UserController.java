@@ -65,4 +65,9 @@ public class UserController {
 
         return "hello";
     }
+
+    public String world() {
+
+        return "world";
+    }
 }
