@@ -45,6 +45,7 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
 }
 
-//bootJar {
-//    launchScript()
-//}
+//実行可能なjarファイルがbuild/libs/xxxx.jarに生成される
+bootJar {
+    launchScript()
+}
