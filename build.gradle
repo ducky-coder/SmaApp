@@ -46,6 +46,8 @@ dependencies {
 }
 
 //実行可能なjarファイルがbuild/libs/xxxx.jarに生成される
+//java -jar jarファイルで実行可能
+//EC2などにあげる際に必要なので残す
 bootJar {
     launchScript()
 }
