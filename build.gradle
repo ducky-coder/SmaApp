@@ -32,6 +32,9 @@ dependencies {
     // javax.annotation @Nonnull使えるように
     compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+//    この下のコメントアウトされた依存関係ではspockは機能しなかった（なんでかを調べておく）
+//    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
+//    testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
     compile 'org.codehaus.groovy:groovy-all:2.5.14'
     testCompile "org.spockframework:spock-core:1.3-groovy-2.5"
     // セッションストアをredisへ変更するため

@@ -1,4 +1,4 @@
-package com.example.smabro_app
+package com.example.smabro_app.presentation.controller
 
 import com.example.smabro_app.application.facade.UserFacade
 import com.example.smabro_app.presentation.controller.api.UserController
@@ -25,6 +25,6 @@ class UserControllerSpec extends Specification {
         def actual = userController.world()
 
         then:
-        actual == "worlds"
+        actual == "world"
     }
 }
