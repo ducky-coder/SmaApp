@@ -61,6 +61,24 @@ public class UserController {
 //        return userFacade.updateUserMatchingStatus(status, id);
 //    }
 
+    @GetMapping("/create")
+    public String create() {
+
+        return "ユーザー登録に成功しました";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+
+        return "ログインに成功しました";
+    }
+
+    @GetMapping("/logout")
+    public String logout() {
+
+        return "ログアウトに成功しました";
+    }
+
     public String hello() {
 
         return "hello";
