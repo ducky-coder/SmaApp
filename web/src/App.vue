@@ -6,7 +6,7 @@
     <p>{{ login }}</p>
     <h3>ログアウトAPI↓</h3>
     <p>{{ logout }}</p>
-    <h3>ユーザー編集API結果↓</h3>
+    <h3>ユーザー編集API結果(1であれば成功)↓</h3>
     <p>{{ updateUser }}</p>
     <h3>対戦相手情報↓</h3>
     <p>{{ opponent }}</p>
@@ -46,7 +46,7 @@ export default {
     this.getCreate()
     this.getLogin()
     this.getLogout()
-    this.postUpdateUser()
+    this.putUpdateUser()
     this.getOpponent()
     this.getUserRanking()
     this.getRate()
@@ -61,17 +61,11 @@ export default {
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
-    postUpdateUser() {
-      axios.post('http://localhost:8080/v1/users/1',{
-        request: {
-          name: "updateUser",
-          password: "updatePassword"
-        }
-      },
-          {
-            headers: {
-              'Content-Type': 'application/json;charset=UTF-8'
-            }})
+    putUpdateUser() {
+      axios.put('http://localhost:8080/v1/users/1',{
+        "name":"updateUser",
+        "password":"updatePassword"
+      })
           .then(res => this.updateUser = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
@@ -107,7 +101,7 @@ export default {
           .catch(err => console.log(err))
     },
     getUserFromName() {
-      axios.get('http://localhost:8080/v1/users/testUser1')
+      axios.get('http://localhost:8080/v1/users/updateUser')
           .then(res => this.user = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
