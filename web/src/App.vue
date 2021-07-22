@@ -1,24 +1,24 @@
 <template>
   <div class="app">
-    <h3>登録API↓</h3>
+    <h1>登録API↓</h1>
     <p>{{ create }}</p>
-    <h3>ログインAPI↓</h3>
+    <h1>ログインAPI↓</h1>
     <p>{{ login }}</p>
-    <h3>ログアウトAPI↓</h3>
+    <h1>ログアウトAPI↓</h1>
     <p>{{ logout }}</p>
-    <h3>ユーザー編集API結果(1であれば成功)↓</h3>
+    <h1>ユーザー編集API結果(1であれば成功)↓</h1>
     <p>{{ updateUser }}</p>
-    <h3>対戦相手情報↓</h3>
+    <h1>対戦相手情報↓</h1>
     <p>{{ opponent }}</p>
-    <h3>ユーザーランキング情報↓</h3>
+    <h1>ユーザーランキング情報↓</h1>
     <p>{{ userRanking }}</p>
-    <h3>レート情報↓</h3>
+    <h1>レート情報↓</h1>
     <p>{{ rate }}</p>
-    <h3>ユーザー情報↓</h3>
+    <h1>ユーザー情報↓</h1>
     <p>{{ user }}</p>
-    <h3>マッチ履歴↓</h3>
+    <h1>マッチ履歴↓</h1>
     <p>{{ matchHistory }}</p>
-    <h3>キャラクターランキング情報↓</h3>
+    <h1>キャラクターランキング情報↓</h1>
     <p>{{ characterRanking }}</p>
   </div>
 </template>
