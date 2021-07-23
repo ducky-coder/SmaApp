@@ -11,11 +11,12 @@ group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
-}
+// 必要ないので一旦コメントアウト
+//configurations {
+//    compileOnly {
+//        extendsFrom annotationProcessor
+//    }
+//}
 
 repositories {
     mavenCentral()
@@ -44,21 +45,21 @@ dependencies {
     testImplementation 'org.springframework.security:spring-security-test'
 
     // lombok
-    compileOnly 'org.projectlombok:lombok'
+    implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
     // javax.annotation @Nonnull使えるように
-    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.1'
 
     //    この下のコメントアウトされた依存関係ではspockは機能しなかった（なんでかを調べておく）
     //    testImplementation 'org.spockframework:spock-core:2.0-groovy-3.0'
     //    testImplementation 'org.codehaus.groovy:groovy-all:3.0.8'
 
     //    spockのテストを実行するには以下の依存関係が必要
-    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
-    testCompile 'org.codehaus.groovy:groovy-all:2.5.14'
-    testCompile "org.spockframework:spock-core:1.3-groovy-2.5"
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.14'
+    testImplementation "org.spockframework:spock-core:1.3-groovy-2.5"
 
     // プロダクトのクラスを実行するときに必要になる依存関係(DB: Mysql)
     runtimeOnly 'mysql:mysql-connector-java'
