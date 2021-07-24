@@ -1,10 +1,10 @@
 <template>
   <div class="app">
-    <h1>登録API↓</h1>
+    <h1>登録結果↓</h1>
     <p>{{ create }}</p>
-    <h1>ログインAPI↓</h1>
+    <h1>ログイン結果↓</h1>
     <p>{{ login }}</p>
-    <h1>ログアウトAPI↓</h1>
+    <h1>ログアウト結果↓</h1>
     <p>{{ logout }}</p>
     <h1>ユーザー編集API結果(1であれば成功)↓</h1>
     <p>{{ updateUser }}</p>
