@@ -2,7 +2,7 @@ version: '3.6' # docker-composeで使用するバージョンを定義
 services: # Docker-Composeでは、アプリケーションを動かすための各要素
   db: # services名
     image: mysql:8.0 # コンテナを実行時に元となるイメージを指定
-    #    restart: always # restart コンテナが停止した際の再起動設定   always 明示的に stop がされない限り、終了ステータスに関係なく常に再起動が行われる
+    restart: always # restart コンテナが停止した際の再起動設定   always 明示的に stop がされない限り、終了ステータスに関係なく常に再起動が行われる
     volumes:
       - ./db:/var/lib/mysql
     environment: #環境変数追加
@@ -23,6 +23,7 @@ services: # Docker-Composeでは、アプリケーションを動かすための
       spring.datasource.username: "root"
       spring.datasource.password: "root"
     ports: # 公開用のポート ホスト側:コンテナ側
-      - "8080:8080"
-#    depends_on: # web起動時にdbを起動する
-#      - db
+      - "8080:8080" # springbootのポート
+      - "8081:8081" # コンテナ上でnpm run serveで開いたポート8081をlocalhost8081とつなげる
+    depends_on: # web起動時にdbを起動する
+      - db
