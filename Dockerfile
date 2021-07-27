@@ -10,10 +10,21 @@ ENV APP_ROUTE=/smabro_app \
 # WORKDIR ワーキングディレクトリの指定
 WORKDIR $APP_ROUTE
 
+# RUN イメージビルドの際にコマンドを命令
+    # apt update リポジトリ一覧を更新( リポジトリ追加・削除時には必ず実行する )
+    # apt install インストール -yオプションで問い合わせがあった場合はすべて「y」と答える（apt installに必須）
+
+RUN apt-get update \
+&& apt-get install -y nodejs \
+&& apt-get install -y npm
+
 # COPY コピーコマンド
     # ホストマシンのソースコードをコンテナ内のアプリにコピーする
 COPY . /$APP_ROUTE
 
 # RUN イメージビルドの際にコマンドを命令
-    # gradle install
+    # gradlew install
 RUN ./gradlew clean build
+
+# ENTRYPOINT コンテナ作成後に実行するコマンドを指定
+ENTRYPOINT ["java", "-jar", "build/libs/smabro_app-0.0.1-SNAPSHOT.jar"]
