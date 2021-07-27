@@ -30,10 +30,10 @@
 
 ## 起動方法
 * イメージのビルド  
-  ```$ Docker-Compose build```
+  ```$ docker-dompose build```
 
 * コンテナの作成  
-  ```$ Docker-Compose up -d```
+  ```$ docker-compose up -d```
 
 * 立ち上がったコンテナを確認  
   ```$ docker ps -a```
