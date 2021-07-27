@@ -27,3 +27,17 @@
 ### CI/CD
 * GithubActions
 * AWS
+
+## 起動方法
+* イメージのビルド  
+  ```$ Docker-Compose build```
+
+* コンテナの作成  
+  ```$ Docker-Compose up -d```
+
+* 立ち上がったコンテナを確認  
+  ```$ docker ps -a```
+
+* 起動したコンテナにログイン（コンテナ名は上記で確認したもの）  
+  ```$ docker exec -it コンテナ名 bash -p``` or ```$ docker exec -it コンテナID bash -p``` 
+
