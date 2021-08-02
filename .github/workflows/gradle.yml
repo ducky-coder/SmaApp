@@ -11,7 +11,7 @@ on:
 
 env:
   EC2_USER: 'ec2-user'
-  EC2_HOST: 18.183.26.158
+  EC2_HOST: '18.183.26.158'
   SRC_PATH: 'build/libs/*.jar'
   DEST_DIR: '/var/apps'
   APP_NAME: 'smabroApp'
