@@ -101,6 +101,6 @@ jobs:
               echo "${APP_NAME} app restart!!"
               sudo systemctl restart ${APP_NAME}
             else
-              echo "${APP_NAME} app start!"
+              echo "${APP_NAME} app start"
               sudo systemctl start ${APP_NAME}
             fi
