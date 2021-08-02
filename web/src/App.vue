@@ -56,13 +56,13 @@ export default {
   },
   methods: {
     getCreate() {
-      axios.get('http://localhost:8080/v1/users/create')
+      axios.get('http://localhost:80/v1/users/create')
           .then(res => this.create = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     putUpdateUser() {
-      axios.put('http://localhost:8080/v1/users/1',{
+      axios.put('http://localhost:80/v1/users/1',{
         "name":"updateUser",
         "password":"updatePassword"
       })
@@ -71,49 +71,49 @@ export default {
           .catch(err => console.log(err))
     },
     getLogin() {
-      axios.get('http://localhost:8080/v1/users/login')
+      axios.get('http://localhost:80/v1/users/login')
           .then(res => this.login = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getLogout() {
-      axios.get('http://localhost:8080/v1/users/logout')
+      axios.get('http://localhost:80/v1/users/logout')
           .then(res => this.logout = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getOpponent() {
-      axios.get('http://localhost:8080/v1/matches/1/?condition=300')
+      axios.get('http://localhost:80/v1/matches/1/?condition=300')
           .then(res => this.opponent = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getUserRanking() {
-      axios.get('http://localhost:8080/v1/users/ranking')
+      axios.get('http://localhost:80/v1/users/ranking')
           .then(res => this.userRanking = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getRate() {
-      axios.get('http://localhost:8080/v1/users/1/rate')
+      axios.get('http://localhost:80/v1/users/1/rate')
           .then(res => this.rate = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getUserFromName() {
-      axios.get('http://localhost:8080/v1/users/updateUser')
+      axios.get('http://localhost:80/v1/users/updateUser')
           .then(res => this.user = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getMatchHistory() {
-      axios.get('http://localhost:8080/v1/matches/history/1')
+      axios.get('http://localhost:80/v1/matches/history/1')
           .then(res => this.matchHistory = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))
     },
     getCharacterRanking() {
-      axios.get('http://localhost:8080/v1/characters/ranking')
+      axios.get('http://localhost:80/v1/characters/ranking')
           .then(res => this.characterRanking = res.data)
           .then(res => console.log(res))
           .catch(err => console.log(err))

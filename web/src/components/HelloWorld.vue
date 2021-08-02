@@ -20,7 +20,7 @@ export default {
     }
   },
   mounted: function(){
-   axios.get('http://localhost:8080/v1/matches/1/?condition=300')
+   axios.get('http://localhost:80/v1/matches/1/?condition=300')
        .then(response => this.bpi = response.data)
        .catch(err => console.log(err))
   }
