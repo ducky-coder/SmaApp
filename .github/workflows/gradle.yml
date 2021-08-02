@@ -14,7 +14,6 @@ env:
   EC2_HOST: 18.183.26.158
   SRC_PATH: 'build/libs/*.jar'
   DEST_DIR: '/var/apps'
-
   APP_NAME: 'smabroApp'
   JAVA_VERSION: '11'
   JAVA_OPTS: '-Xms1024M -Xmx1024M'
